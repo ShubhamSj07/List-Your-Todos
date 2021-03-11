@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+body {
+	position: relative;
+	background-color: #182035;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 20px;
+	color: aliceblue;
+}
+form {
+	position: absolute;
+	top: 150%;
+	right: 30%;
+	left: 30%;
+	border-radius: 8px;
+	color: #000;
+}
+
+.items {
+	position: absolute;
+	top: 5.2rem;
+	right: 30%;
+	left: 30%;
+	border-radius: 8px;
+}
+.item-content {
+	background-color: #1d2844;
+	border-bottom: 1px solid rgb(32, 51, 71);
+	color: #fff;
+	font-size: 1.1rem;
+	letter-spacing: 1.4px;
+	font-family: 'Roboto Mono', monospace;
+}
+.form-group {
+	margin-bottom: 0;
+}
+::-webkit-scrollbar {
+	width: 15px;
+	height: 4px;
+}
+::-webkit-scrollbar-track {
+	background: #1c1c1c;
+	border-left: 9px solid #1c1c1c;
+	border-right: 9px solid #1c1c1c;
+}
+::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(#eff54d, #00ac61);
+	border-left: 5px solid #1c1c1c;
+	border-right: 5px solid #1c1c1c;
+	border-radius: 30px;
+}
