@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
 	FormGroup,
 	Input,
@@ -6,18 +6,21 @@ import {
 	InputGroupAddon,
 	Form,
 	Button,
-} from 'reactstrap';
-import { v4 } from 'uuid';
+} from "reactstrap";
+import { v4 } from "uuid";
 
-import { RiAddFill } from 'react-icons/ri';
+import { RiAddFill } from "react-icons/ri";
+
+import { ToastContainer, toast } from "material-react-toastify";
+import "material-react-toastify/dist/ReactToastify.css";
 
 const TodoForm = ({ addTodos }) => {
-	const [todoString, setTodoString] = useState('');
+	const [todoString, setTodoString] = useState("");
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		if (todoString === '') {
-			return alert('Please enter a todo!');
+		if (todoString === "") {
+			return toast.error("Please enter a todo...");
 		}
 		const todo = {
 			todoString,
@@ -25,41 +28,43 @@ const TodoForm = ({ addTodos }) => {
 		};
 
 		addTodos(todo);
+		toast.success(`${todoString} todo added! to list `);
 
-		setTodoString('');
+		setTodoString("");
 	};
 
 	return (
-		<Form onSubmit={handleSubmit}>
-			<FormGroup>
-				<InputGroup>
-					<Input
-						type='text'
-						name='todo'
-						id='todo'
-						autoComplete='false'
-						placeholder='Enter a todos..'
-						value={todoString}
-						onChange={e => setTodoString(e.target.value)}
-						style={{
-							fontSize: '1.4rem',
-						}}
-					/>
-					<InputGroupAddon addonType='prepend'>
-						<Button color='warning'>
-							<RiAddFill
-								style={{
-									fontSize: '1.5rem',
-									color: '#fff',
-									backgroundColor: 'red',
-									borderRadius: ' 50%',
-								}}
-							/>
-						</Button>
-					</InputGroupAddon>
-				</InputGroup>
-			</FormGroup>
-		</Form>
+		<>
+			<ToastContainer position="bottom-center" autoClose="1600" />
+			<Form onSubmit={handleSubmit}>
+				<FormGroup>
+					<InputGroup id="todo">
+						<Input
+							autoFocus="on"
+							type="text"
+							name="todo"
+							id="todo-txt"
+							autoComplete="off"
+							placeholder="Enter a todo.."
+							value={todoString}
+							onChange={e => setTodoString(e.target.value)}
+						/>
+						<InputGroupAddon addonType="prepend">
+							<Button color="warning">
+								<RiAddFill
+									style={{
+										fontSize: "1.5rem",
+										color: "#fff",
+										backgroundColor: "red",
+										borderRadius: " 50%",
+									}}
+								/>
+							</Button>
+						</InputGroupAddon>
+					</InputGroup>
+				</FormGroup>
+			</Form>
+		</>
 	);
 };
 

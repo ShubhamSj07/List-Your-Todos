@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 *,
 *::after,
 *::before {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: 'Ubuntu Mono', monospace;
+	font-family: "Ubuntu Mono", monospace;
 }
 
 body {
 	position: relative;
-	background-color: #182035;
+	background-color: #222631;
 }
 
 h1 {
@@ -20,7 +20,6 @@ h1 {
 	color: aliceblue;
 }
 form {
-	position: absolute;
 	top: 150%;
 	right: 30%;
 	left: 30%;
@@ -30,34 +29,122 @@ form {
 
 .items {
 	position: absolute;
-	top: 5.2rem;
+	top: 8.2rem;
 	right: 30%;
 	left: 30%;
 	border-radius: 8px;
 }
 .item-content {
-	background-color: #1d2844;
-	border-bottom: 1px solid rgb(32, 51, 71);
+	background: linear-gradient(-157deg, #3b414e 0%, #303847 64%);
+	border-bottom: 1px solid rgb(72, 77, 82);
 	color: #fff;
 	font-size: 1.1rem;
+	text-transform: capitalize;
 	letter-spacing: 1.4px;
-	font-family: 'Roboto Mono', monospace;
+	font-family: "Roboto Mono", monospace;
 }
 .form-group {
 	margin-bottom: 0;
 }
-::-webkit-scrollbar {
-	width: 15px;
-	height: 4px;
+
+#todo {
+	display: flex;
+	position: absolute;
+	padding: 2rem;
+	margin: 0.5rem 0;
+	left: 25%;
+	width: 50%;
 }
-::-webkit-scrollbar-track {
-	background: #1c1c1c;
-	border-left: 9px solid #1c1c1c;
-	border-right: 9px solid #1c1c1c;
+
+@media screen and (max-width: 1250px) {
+	h1 {
+		font-size: 1.4rem;
+	}
+	#todo {
+		padding: 2rem;
+		margin: 0.5rem 0;
+		left: 8%;
+		width: 85%;
+	}
+	#todo-txt {
+		font-size: 1.3rem;
+	}
+	.items {
+		position: absolute;
+		top: 5.2rem;
+		border-radius: 8px;
+		padding: 2rem;
+		margin: 0.5rem 0;
+		left: 14%;
+		width: 75%;
+	}
 }
-::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(#eff54d, #00ac61);
-	border-left: 5px solid #1c1c1c;
-	border-right: 5px solid #1c1c1c;
-	border-radius: 30px;
+@media screen and (max-width: 550px) {
+	h1 {
+		font-size: 1.4rem;
+	}
+	#todo {
+		padding: 2rem;
+		margin: 0.5rem 0;
+		left: 0%;
+		width: 100%;
+	}
+	#todo-txt {
+		font-size: 1.3rem;
+	}
+	.items {
+		position: absolute;
+		top: 5.2rem;
+		border-radius: 8px;
+		padding: 2rem;
+		margin: 0.5rem 0;
+		left: 11%;
+		width: 75%;
+	}
+}
+@media screen and (max-width: 380px) {
+	h1 {
+		font-size: 1.3rem;
+	}
+	#todo {
+		padding: 1rem;
+		margin: 0.3rem 0;
+		left: 0%;
+		width: 100%;
+	}
+	#todo-txt {
+		font-size: 1.1rem;
+	}
+	.items {
+		position: absolute;
+		top: 4.2rem;
+		border-radius: 8px;
+		padding: 1.8rem;
+		margin: 0.5rem 0;
+		left: 5%;
+		width: 90%;
+	}
+}
+@media screen and (max-width: 320px) {
+	h1 {
+		font-size: 1.3rem;
+	}
+	#todo {
+		padding: 1rem;
+		margin: 0.3rem 0;
+		left: 0%;
+		width: 100%;
+	}
+	#todo-txt {
+		font-size: 1.1rem;
+	}
+	.items {
+		position: absolute;
+		top: 4.2rem;
+		border-radius: 8px;
+		padding: 1.7rem;
+		margin: 0.5rem 0;
+		left: 4%;
+		width: 95%;
+	}
 }

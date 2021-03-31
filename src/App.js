@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Container } from 'reactstrap';
+import React, { useState, useEffect } from "react";
+import { Container } from "reactstrap";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
-import TodoForm from './components/TodoForm';
-import Todos from './components/Todos';
+import TodoForm from "./components/TodoForm";
+import Todos from "./components/Todos";
+
+import { FcTodoList } from "react-icons/fc";
 
 const App = () => {
 	const [todos, setTodos] = useState([]);
 
 	useEffect(() => {
-		const localTodos = localStorage.getItem('todos');
+		const localTodos = localStorage.getItem("todos");
 		// console.log({ localStorage });
 		if (localTodos) {
 			setTodos(JSON.parse(localTodos));
@@ -23,7 +25,7 @@ const App = () => {
 	};
 
 	useEffect(() => {
-		localStorage.setItem('todos', JSON.stringify(todos));
+		localStorage.setItem("todos", JSON.stringify(todos));
 	}, [todos]);
 
 	const markComplete = id => {
@@ -32,7 +34,10 @@ const App = () => {
 
 	return (
 		<Container fluid>
-			<h1>List your todos...</h1>
+			<h1>
+				List your todos... <FcTodoList style={{ color: "#fff" }} />
+			</h1>
+
 			<TodoForm addTodos={addTodos} />
 			<Todos todos={todos} markComplete={markComplete} />
 		</Container>
